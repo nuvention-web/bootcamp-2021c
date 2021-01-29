@@ -9,7 +9,7 @@ const NavigationBanner = () => {
         <View style={styles.banner}>
             {
                 navElements.map((title) => (
-                    <Text style={styles.title} >{title}</Text>
+                    <Text key={title} style={styles.title} >{title}</Text>
                 ))
             }
         </View>

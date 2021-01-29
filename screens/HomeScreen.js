@@ -12,11 +12,11 @@ const HomeScreen = ({navigation}) => {
     }
 
     return (
-        <View >
+        <View style={styles.page} >
             <NavigationBanner/>
             {
                 products.map((productName) =>(
-                    <Product productName={productName} toProductPage={navToProduct} />
+                    <Product key={productName} productName={productName} toProductPage={navToProduct} />
                 ))
             }
         </View>
@@ -24,7 +24,9 @@ const HomeScreen = ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
-
+    page: {
+        backgroundColor: '#8EC660'
+    }
 });
 
 export default HomeScreen;
