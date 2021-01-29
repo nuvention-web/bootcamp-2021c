@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './screens/HomeScreen';
 import UserContext from './UserContext';
+import ProductScreen from './screens/ProductScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,8 +18,17 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="HomeScreen"
             component={HomeScreen}
-            options={() => ({ 
+            options={({navigation}) => ({ 
               title: "Home",
+              headerRight: () => (
+                <Text style={styles.ecoScore} >{`Eco Score: ${ecoScore} pts`}</Text>
+              ),
+            })}
+          />
+          <Stack.Screen name="ProductScreen"
+            component={ProductScreen}
+            options={() => ({
+              title: "Product",
               headerRight: () => (
                 <Text style={styles.ecoScore} >{`Eco Score: ${ecoScore} pts`}</Text>
               ),
