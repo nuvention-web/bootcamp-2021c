@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import UserContext from '../UserContext';
 
 const navElements = ["Clothing", "Beauty & Care", "Travel", "Audio & Tech", "Pets"];
 
@@ -8,7 +9,7 @@ const NavigationBanner = () => {
         <View style={styles.banner}>
             {
                 navElements.map((title) => (
-                    <Text >{title}</Text>
+                    <Text style={styles.title} >{title}</Text>
                 ))
             }
         </View>
@@ -18,10 +19,11 @@ const NavigationBanner = () => {
 const styles = StyleSheet.create({
     banner: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        margin: 20
     },
     title: {
-
+        fontSize: 35,
     }
 });
 
