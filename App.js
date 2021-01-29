@@ -1,13 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import HomeScreen from './screens/HomeScreen';
+
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Sustainability Store</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -19,3 +25,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
